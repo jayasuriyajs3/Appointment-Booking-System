@@ -16,7 +16,7 @@ public class userservice {
     private userrepository userRepository;
 
     public List<user> getAllUsers() {
-        return userrepository.findAll();
+        return userRepository.findAll();
     }
 
     public Optional<user> getUserById(Long id) {
@@ -28,12 +28,12 @@ public class userservice {
     }
 
     public user updateUser(Long id, user userDetails) {
-        user user = userrepository.findById(id).orElseThrow();
+        user user = userRepository.findById(id).orElseThrow();
         user.setName(userDetails.getName());
         user.setEmail(userDetails.getEmail());
         user.setContactNo(userDetails.getContactNo());
         user.setJoinDate(userDetails.getJoinDate());
-        return userrepository.save(user);
+        return userRepository.save(user);
     }
 
     public void deleteUser(Long id) {
