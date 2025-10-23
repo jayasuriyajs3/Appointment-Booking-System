@@ -20,4 +20,8 @@ public class appointment {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private user user;
+
+    @ManyToOne
+    @JoinColumn(name = "doctor_id")
+    private doctor doctor;
 }
