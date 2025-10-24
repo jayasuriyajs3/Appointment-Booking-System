@@ -14,14 +14,18 @@ public class appointment {
     @Column(name = "appointment_id")
     private Long appointmentId;
 
-    @Column(name = "appointment_date")
-    private LocalDateTime appointmentDate = LocalDateTime.now();
-
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = false)
     private user user;
 
     @ManyToOne
-    @JoinColumn(name = "doctor_id")
+    @JoinColumn(name = "doctor_id", nullable = false)
     private doctor doctor;
+
+    @Column(name = "appointment_date")
+    private LocalDateTime appointmentDate;
+
+    private String status; // e.g., "Scheduled", "Completed", "Cancelled"
+
+    private String remarks;
 }

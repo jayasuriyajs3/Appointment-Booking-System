@@ -1,5 +1,9 @@
 package com.example.abs.repository;
 
-public class appointmentrepository {
-    
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.example.abs.entity.appointment;
+
+public interface appointmentrepository extends JpaRepository<appointment, Long> {
+}
+
 }
