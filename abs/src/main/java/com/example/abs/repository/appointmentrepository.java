@@ -5,5 +5,3 @@ import com.example.abs.entity.appointment;
 
 public interface appointmentrepository extends JpaRepository<appointment, Long> {
 }
-
-}

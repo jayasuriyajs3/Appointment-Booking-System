@@ -1,0 +1,33 @@
+/* style.css */
+
+/* Simple body background for visual separation */
+body {
+    background-color: #f8f9fa !important; /* Lighter background than the container */
+}
+
+/* Enhancing the container on the form page */
+.container.bg-white {
+    border: 1px solid #dee2e6; /* Subtle border */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Adding a hover effect to the form container (optional but nice) */
+.container.bg-white:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Adjusting the table padding for a cleaner look */
+.table-responsive {
+    padding: 1.5rem !important;
+}
+
+/* Ensure the table header is clearly distinct */
+.table-dark th {
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+/* General button styling adjustments for uniformity */
+.btn {
+    font-weight: 500;
+}
