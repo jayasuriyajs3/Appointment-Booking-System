@@ -41,7 +41,11 @@ public class AppointmentController {
     }
 
     @PostMapping
-    public String createAppointment(@ModelAttribute appointment appointment) {
+    public String createAppointment(@ModelAttribute appointment appointment,
+            @RequestParam Long userId,
+            @RequestParam Long doctorId) {
+        appointment.setUser(userService.getUserById(userId).orElseThrow());
+        appointment.setDoctor(doctorService.getDoctorById(doctorId).orElseThrow());
         appointmentService.createAppointment(appointment);
         return "redirect:/appointments";
     }
@@ -62,7 +66,12 @@ public class AppointmentController {
     }
 
     @PostMapping("/update/{id}")
-    public String updateAppointment(@PathVariable Long id, @ModelAttribute appointment appointment) {
+    public String updateAppointment(@PathVariable Long id,
+            @ModelAttribute appointment appointment,
+            @RequestParam Long userId,
+            @RequestParam Long doctorId) {
+        appointment.setUser(userService.getUserById(userId).orElseThrow());
+        appointment.setDoctor(doctorService.getDoctorById(doctorId).orElseThrow());
         appointmentService.updateAppointment(id, appointment);
         return "redirect:/appointments";
     }

@@ -17,17 +17,23 @@
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label for="userSelect" class="form-label">Patient (User)</label>
-                    <select id="userSelect" th:field="*{user}" class="form-select" required>
+                    <select id="userSelect" name="userId" class="form-select" required>
                         <option value="">-- Select Patient --</option>
-                        <option th:each="u : ${users}" th:value="${u.userId}" th:text="${u.name}"></option>
+                        <option th:each="u : ${users}" 
+                                th:value="${u.userId}" 
+                                th:text="${u.name}"
+                                th:selected="${appointment.user != null && appointment.user.userId == u.userId}"></option>
                     </select>
                 </div>
                 
                 <div class="col-md-6 mb-3">
                     <label for="doctorSelect" class="form-label">Doctor</label>
-                    <select id="doctorSelect" th:field="*{doctor}" class="form-select" required>
+                    <select id="doctorSelect" name="doctorId" class="form-select" required>
                         <option value="">-- Select Doctor --</option>
-                        <option th:each="d : ${doctors}" th:value="${d.doctorId}" th:text="${d.name} + ' (' + ${d.specialization} + ')'"></option>
+                        <option th:each="d : ${doctors}" 
+                                th:value="${d.doctorId}" 
+                                th:text="${d.name} + ' (' + ${d.specialization} + ')'"
+                                th:selected="${appointment.doctor != null && appointment.doctor.doctorId == d.doctorId}"></option>
                     </select>
                 </div>
             </div>

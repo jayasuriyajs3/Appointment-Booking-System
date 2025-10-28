@@ -35,16 +35,14 @@
                 <tbody>
                     <tr th:each="a : ${appointments}">
                         <td th:text="${a.appointmentId}"></td>
-                        <td th:text="${a.user.name}"></td>
-                        <td th:text="${a.doctor.name}"></td>
-                        <td th:text="${#temporals.format(a.appointmentDate, 'dd MMM yyyy HH:mm')}" class="text-nowrap"></td>
+                        <td th:text="${a.user != null ? a.user.name : '-'}"></td>
+                        <td th:text="${a.doctor != null ? a.doctor.name : '-'}"></td>
+                        <td th:text="${a.appointmentDate != null ? #temporals.format(a.appointmentDate, 'dd MMM yyyy HH:mm') : '-'}" class="text-nowrap"></td>
                         <td>
-                            <span th:class="${a.status == 'Confirmed'} ? 'badge text-bg-success' : 
-                                            ${a.status == 'Pending'} ? 'badge text-bg-warning' : 
-                                            'badge text-bg-secondary'" th:text="${a.status}">
+                            <span th:class="${a.status == 'Confirmed' ? 'badge text-bg-success' : (a.status == 'Pending' ? 'badge text-bg-warning' : 'badge text-bg-secondary')}" th:text="${a.status != null ? a.status : 'N/A'}">
                             </span>
                         </td>
-                        <td th:text="${a.remarks}"></td>
+                        <td th:text="${a.remarks != null ? a.remarks : '-'}"></td>
                         <td class="text-center" style="min-width: 150px;">
                             <a th:href="@{'/appointments/edit/' + ${a.appointmentId}}" class="btn btn-sm btn-warning me-2" title="Edit Appointment">
                                 <i class="bi bi-pencil"></i>

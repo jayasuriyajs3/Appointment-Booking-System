@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Booking System - Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .home-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .welcome-header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+        .welcome-header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .welcome-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .module-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .module-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .module-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        .module-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .module-card h3 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .module-card p {
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+        .module-card .btn {
+            padding: 12px 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .card-users {
+            border-top: 5px solid #3498db;
+        }
+        .card-users .module-icon {
+            color: #3498db;
+        }
+        .card-doctors {
+            border-top: 5px solid #2ecc71;
+        }
+        .card-doctors .module-icon {
+            color: #2ecc71;
+        }
+        .card-appointments {
+            border-top: 5px solid #e74c3c;
+        }
+        .card-appointments .module-icon {
+            color: #e74c3c;
+        }
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="home-container">
+        <div class="welcome-header">
+            <h1><i class="bi bi-hospital"></i> Appointment Booking System</h1>
+            <p>Manage your healthcare appointments efficiently and effectively</p>
+        </div>
+
+        <div class="module-cards">
+            <!-- Users Module -->
+            <a href="/users" class="module-card card-users">
+                <i class="bi bi-people-fill module-icon"></i>
+                <h3>Users</h3>
+                <p>Manage patient records, view user information, and handle registrations</p>
+                <span class="btn btn-primary">
+                    <i class="bi bi-arrow-right-circle"></i> Manage Users
+                </span>
+            </a>
+
+            <!-- Doctors Module -->
+            <a href="/doctors" class="module-card card-doctors">
+                <i class="bi bi-person-badge-fill module-icon"></i>
+                <h3>Doctors</h3>
+                <p>View doctor profiles, specializations, and availability schedules</p>
+                <span class="btn btn-success">
+                    <i class="bi bi-arrow-right-circle"></i> Manage Doctors
+                </span>
+            </a>
+
+            <!-- Appointments Module -->
+            <a href="/appointments" class="module-card card-appointments">
+                <i class="bi bi-calendar-check-fill module-icon"></i>
+                <h3>Appointments</h3>
+                <p>Schedule, view, and manage patient appointments with doctors</p>
+                <span class="btn btn-danger">
+                    <i class="bi bi-arrow-right-circle"></i> Manage Appointments
+                </span>
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 Appointment Booking System. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

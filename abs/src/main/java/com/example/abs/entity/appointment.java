@@ -1,6 +1,7 @@
 package com.example.abs.entity;
 
 import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
 import java.time.LocalDateTime;
 
 @Entity
@@ -21,6 +22,7 @@ public class appointment {
     private doctor doctor;
 
     @Column(name = "appointment_date")
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private LocalDateTime appointmentDate;
 
     private String status; // e.g., "Scheduled", "Completed", "Cancelled"
